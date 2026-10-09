@@ -77,7 +77,7 @@ export default async function PricingPage({ params }: PageProps<"/[locale]/prici
         <h2 id="compare-title" className="text-2xl font-semibold tracking-tight">
           {t("compareTitle")}
         </h2>
-        <div className="mt-6 overflow-x-auto rounded-2xl border bg-card">
+        <div className="relative mt-6 overflow-x-auto rounded-2xl border bg-card">
           <table className="w-full min-w-[560px] text-sm">
             <thead>
               <tr className="border-b bg-muted/50">

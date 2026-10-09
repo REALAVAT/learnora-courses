@@ -19,7 +19,7 @@ export function AppNav({ label, items }: { label: string; items: AppNavItem[] })
 
   return (
     <nav aria-label={label} className="no-print">
-      <ul className="-mx-4 flex gap-1 overflow-x-auto px-4 pb-1 lg:mx-0 lg:flex-col lg:overflow-visible lg:px-0 lg:pb-0">
+      <ul className="-mx-4 flex [scrollbar-width:none] gap-1 overflow-x-auto px-4 pb-1 lg:mx-0 lg:flex-col lg:overflow-visible lg:px-0 lg:pb-0">
         {items.map((item) => {
           const active = isActive(item);
           const Icon = item.icon;

@@ -145,7 +145,7 @@ export function TeachDashboardView() {
               <ArrowRightIcon aria-hidden="true" className="size-4" />
             </Link>
           </div>
-          <div className="overflow-x-auto">
+          <div className="relative overflow-x-auto">
             <table className="w-full min-w-[560px] text-sm">
               <thead>
                 <tr className="border-y bg-muted/50 text-left text-xs text-muted-foreground">

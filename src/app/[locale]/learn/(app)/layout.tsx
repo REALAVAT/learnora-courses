@@ -17,8 +17,8 @@ export default async function LearnAppLayout({ children, params }: LayoutProps<"
         {t("skip")}
       </a>
       <SiteHeader />
-      <div className="container-page grid flex-1 gap-6 py-6 lg:grid-cols-[220px_1fr] lg:gap-10 lg:py-10">
-        <aside className="lg:sticky lg:top-24 lg:self-start">
+      <div className="container-page grid flex-1 grid-cols-1 gap-6 py-6 lg:grid-cols-[220px_1fr] lg:gap-10 lg:py-10">
+        <aside className="min-w-0 lg:sticky lg:top-24 lg:self-start">
           <LearnNav />
         </aside>
         <main id="main" className="min-w-0">

@@ -381,7 +381,7 @@ function BuilderForm({ course }: { course: DraftCourse }) {
         <ChevronLeftIcon aria-hidden="true" className="size-4" />
         {t("back")}
       </Link>
-      <header className="sticky top-16 z-20 -mx-4 mb-6 flex flex-col gap-3 border-b bg-background/90 px-4 py-3 backdrop-blur-xl sm:-mx-6 sm:px-6 lg:mx-0 lg:flex-row lg:items-center lg:justify-between lg:rounded-2xl lg:border lg:px-5">
+      <header className="z-20 -mx-4 mb-6 flex flex-col gap-3 border-b bg-background/90 px-4 py-3 backdrop-blur-xl sm:-mx-6 sm:px-6 md:sticky md:top-16 lg:mx-0 lg:flex-row lg:items-center lg:justify-between lg:rounded-2xl lg:border lg:px-5">
         <div className="min-w-0">
           <div className="flex flex-wrap items-center gap-2">
             <Badge

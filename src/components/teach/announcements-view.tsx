@@ -54,7 +54,7 @@ export function TeachAnnouncementsView() {
   return (
     <div>
       <PageHeader title={t("title")} subtitle={t("subtitle")} />
-      <div className="grid gap-8 xl:grid-cols-[minmax(0,420px)_1fr] xl:items-start">
+      <div className="grid grid-cols-1 gap-8 xl:grid-cols-[minmax(0,420px)_minmax(0,1fr)] xl:items-start">
         <section
           aria-labelledby={`${id}-new`}
           className="rounded-3xl border bg-card p-5 sm:p-6 xl:sticky xl:top-24"

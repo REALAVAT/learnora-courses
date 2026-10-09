@@ -237,7 +237,10 @@ export function LessonView({ slug, lessonId }: { slug: string; lessonId: string 
             ) : null}
 
             <Tabs value={tab} onValueChange={(v) => setTab(String(v))} className="mt-6">
-              <TabsList variant="line" className="w-full justify-start overflow-x-auto border-b pb-1">
+              <TabsList
+                variant="line"
+                className="w-full [scrollbar-width:none] justify-start overflow-x-auto border-b pb-1"
+              >
                 <TabsTrigger value="overview" className="flex-none px-3">
                   {t("tabs.overview")}
                 </TabsTrigger>

@@ -114,7 +114,7 @@ export function TeachStudentsView() {
       {rows.length === 0 ? (
         <EmptyState icon={UsersIcon} title={t("emptyTitle")} body={t("emptyBody")} />
       ) : (
-        <div className="overflow-x-auto rounded-2xl border bg-card">
+        <div className="relative overflow-x-auto rounded-2xl border bg-card">
           <table className="w-full min-w-[760px] text-sm">
             <thead>
               <tr className="border-b bg-muted/50 text-left text-xs text-muted-foreground">
