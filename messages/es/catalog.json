@@ -1,0 +1,55 @@
+{
+  "Catalog": {
+    "metaTitle": "Explorar cursos",
+    "metaDescription": "Descubre cursos online impartidos por expertos en diseño, desarrollo, datos, negocios, idiomas y fotografía. Filtra por nivel, precio, duración, idioma y valoración.",
+    "title": "Explora los cursos",
+    "subtitle": "Encuentra el curso adecuado para tu siguiente paso. Todos incluyen proyectos, cuestionarios y certificado.",
+    "breadcrumbHome": "Inicio",
+    "searchLabel": "Buscar cursos",
+    "searchPlaceholder": "Busca por título, habilidad o instructor",
+    "filters": "Filtros",
+    "filtersCount": "Filtros ({count})",
+    "clearAll": "Borrar todo",
+    "showResults": "Ver {count, plural, one {# resultado} other {# resultados}}",
+    "results": "{count, plural, =0 {No hay cursos} one {# curso} other {# cursos}}",
+    "resultsFor": "para “{query}”",
+    "category": "Categoría",
+    "level": "Nivel",
+    "price": "Precio",
+    "duration": "Duración",
+    "language": "Idioma",
+    "rating": "Valoración",
+    "priceOptions": {
+      "free": "Gratis",
+      "paid": "De pago",
+      "under75": "Menos de 75 $",
+      "over75": "75 $ o más"
+    },
+    "durationOptions": {
+      "under1": "Menos de 1 hora",
+      "1to2": "De 1 a 2 horas",
+      "over2": "Más de 2 horas"
+    },
+    "ratingOptions": {
+      "any": "Cualquier valoración",
+      "r48": "4,8 o más",
+      "r45": "4,5 o más",
+      "r40": "4,0 o más"
+    },
+    "sort": "Ordenar por",
+    "sortOptions": {
+      "popular": "Más populares",
+      "rating": "Mejor valorados",
+      "newest": "Más recientes",
+      "price-asc": "Precio: de menor a mayor",
+      "price-desc": "Precio: de mayor a menor"
+    },
+    "view": "Vista",
+    "grid": "Vista en cuadrícula",
+    "list": "Vista en lista",
+    "removeFilter": "Quitar filtro: {label}",
+    "emptyTitle": "Ningún curso coincide con tus filtros",
+    "emptyBody": "Prueba a quitar un filtro o a buscar algo más general.",
+    "emptyAction": "Restablecer filtros"
+  }
+}

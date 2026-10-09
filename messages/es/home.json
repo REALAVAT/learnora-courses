@@ -1,0 +1,87 @@
+{
+  "Home": {
+    "metaTitle": "Learnora | Cursos online para profesionales modernos",
+    "eyebrow": "Nuevo: IA práctica para profesionales",
+    "title": "Aprende las habilidades que impulsan tu carrera",
+    "titleAccent": "impulsan",
+    "subtitle": "Cursos basados en proyectos de diseño, programación, negocios, idiomas y fotografía, impartidos por personas que hacen este trabajo cada día.",
+    "searchLabel": "¿Qué quieres aprender?",
+    "searchPlaceholder": "Prueba “Figma”, “SQL” o “inglés”",
+    "searchButton": "Buscar",
+    "popular": "Populares:",
+    "stats": {
+      "learners": "estudiantes en el mundo",
+      "courses": "cursos con expertos",
+      "rating": "valoración media",
+      "countries": "países"
+    },
+    "heroCard": {
+      "continue": "Continúa aprendiendo",
+      "lesson": "Lección 7 de 10",
+      "certificate": "Certificado obtenido",
+      "streak": "Racha de 12 días"
+    },
+    "trusted": "Equipos de empresas en crecimiento aprenden con Learnora",
+    "categoriesTitle": "Explora las categorías populares",
+    "categoriesSubtitle": "Desde tu primera línea de código hasta tu próximo ascenso.",
+    "featuredTitle": "Cursos destacados",
+    "featuredSubtitle": "Seleccionados por nuestro equipo editorial y favoritos de los estudiantes.",
+    "browseAll": "Ver todos los cursos",
+    "whyTitle": "Diseñado para cómo aprenden de verdad los profesionales",
+    "why": {
+      "projects": {
+        "title": "Aprende haciendo",
+        "body": "Cada curso termina con un proyecto real para tu portafolio, no con un montón de diapositivas."
+      },
+      "anywhere": {
+        "title": "Lecciones cortas, en cualquier lugar",
+        "body": "Lecciones breves, notas y progreso sincronizados entre dispositivos. Aprende en inglés o en español."
+      },
+      "credentials": {
+        "title": "Credenciales que cuentan",
+        "body": "Supera la evaluación final para obtener un certificado verificable que puedes compartir en LinkedIn."
+      },
+      "instructors": {
+        "title": "Impartido por profesionales",
+        "body": "Los instructores son diseñadores, ingenieros, fundadores y artistas en activo, seleccionados por nuestro equipo en Nueva York."
+      }
+    },
+    "instructorsTitle": "Aprende de quienes hacen el trabajo",
+    "instructorsSubtitle": "Nuestros instructores lanzan productos, dirigen equipos y publican su trabajo.",
+    "meetAll": "Conoce a todos los instructores",
+    "testimonialsTitle": "A los estudiantes les encanta Learnora",
+    "testimonialsSubtitle": "Historias reales de personas que cambiaron su carrera.",
+    "pricingTitle": "Precios sencillos para cada etapa",
+    "pricingSubtitle": "Empieza gratis. Mejora tu plan cuando quieras aprendizaje ilimitado.",
+    "comparePlans": "Comparar planes",
+    "perMonth": "/mes",
+    "faqTitle": "Preguntas frecuentes",
+    "faq": {
+      "q1": "¿Cómo funciona Learnora?",
+      "a1": "Elige un curso, aprende a tu ritmo con lecciones cortas en video, practica con proyectos y cuestionarios, y obtén un certificado al superar la evaluación final.",
+      "q2": "¿Puedo aprender en español?",
+      "a2": "Sí. Toda la plataforma está disponible en inglés y en español, y muchos cursos incluyen lecciones o subtítulos en español.",
+      "q3": "¿Tengo acceso de por vida?",
+      "a3": "Los cursos que compras son tuyos para siempre, incluidas las actualizaciones. Los planes Pro y Business dan acceso ilimitado mientras estés suscrito.",
+      "q4": "¿Hay política de reembolso?",
+      "a4": "Sí. Si un curso no es para ti, solicita el reembolso completo en los 30 días siguientes a la compra, sin preguntas.",
+      "q5": "¿Puedo enseñar en Learnora?",
+      "a5": "Siempre buscamos profesionales con algo que compartir. Crea una cuenta de instructor para construir tu primer curso con nuestro editor.",
+      "q6": "¿Ofrecéis planes para equipos?",
+      "a6": "Nuestro plan Business incluye un panel de equipo, rutas de aprendizaje asignadas, SSO y facturación centralizada."
+    },
+    "ctaTitle": "Empieza a aprender hoy. Tu primer curso corre de nuestra cuenta.",
+    "ctaBody": "Únete a más de 250.000 profesionales que desarrollan habilidades reales con Learnora.",
+    "ctaPrimary": "Crear cuenta gratis",
+    "ctaSecondary": "Explorar cursos"
+  },
+  "CourseCard": {
+    "by": "por {name}",
+    "students": "{count} estudiantes",
+    "level": "Nivel",
+    "duration": "Duración",
+    "spanish": "En español",
+    "discount": "Ahorra {percent}%",
+    "viewCourse": "Ver curso"
+  }
+}

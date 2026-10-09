@@ -1,0 +1,87 @@
+{
+  "Home": {
+    "metaTitle": "Learnora | Online courses for modern professionals",
+    "eyebrow": "New: Practical AI for Professionals",
+    "title": "Learn the skills that move your career forward",
+    "titleAccent": "forward",
+    "subtitle": "Project-based courses in design, code, business, languages and photography, taught by people who do the work every day.",
+    "searchLabel": "What do you want to learn?",
+    "searchPlaceholder": "Try “Figma”, “SQL” or “Spanish”",
+    "searchButton": "Search",
+    "popular": "Popular:",
+    "stats": {
+      "learners": "learners worldwide",
+      "courses": "expert-led courses",
+      "rating": "average course rating",
+      "countries": "countries"
+    },
+    "heroCard": {
+      "continue": "Continue learning",
+      "lesson": "Lesson 7 of 10",
+      "certificate": "Certificate earned",
+      "streak": "12-day streak"
+    },
+    "trusted": "Teams at fast-growing companies learn with Learnora",
+    "categoriesTitle": "Explore popular categories",
+    "categoriesSubtitle": "From your first line of code to your next promotion.",
+    "featuredTitle": "Featured courses",
+    "featuredSubtitle": "Hand-picked by our editors and loved by learners.",
+    "browseAll": "Browse all courses",
+    "whyTitle": "Built for how professionals actually learn",
+    "why": {
+      "projects": {
+        "title": "Learn by doing",
+        "body": "Every course ends with a real project you can add to your portfolio, not a stack of slides."
+      },
+      "anywhere": {
+        "title": "Short lessons, anywhere",
+        "body": "Bite-sized lessons, notes and progress that sync across devices. Learn in English or Spanish."
+      },
+      "credentials": {
+        "title": "Credentials that count",
+        "body": "Pass the final assessment to earn a verifiable certificate you can share on LinkedIn."
+      },
+      "instructors": {
+        "title": "Taught by practitioners",
+        "body": "Instructors are working designers, engineers, founders and artists, vetted by our team in New York."
+      }
+    },
+    "instructorsTitle": "Learn from people who do the work",
+    "instructorsSubtitle": "Our instructors ship products, lead teams and publish their work.",
+    "meetAll": "Meet all instructors",
+    "testimonialsTitle": "Learners love Learnora",
+    "testimonialsSubtitle": "Real stories from people who changed their careers.",
+    "pricingTitle": "Simple pricing for every stage",
+    "pricingSubtitle": "Start free. Upgrade when you're ready for unlimited learning.",
+    "comparePlans": "Compare plans",
+    "perMonth": "/mo",
+    "faqTitle": "Frequently asked questions",
+    "faq": {
+      "q1": "How does Learnora work?",
+      "a1": "Pick a course, learn at your own pace with short video lessons, practice with projects and quizzes, then earn a certificate when you pass the final assessment.",
+      "q2": "Can I learn in Spanish?",
+      "a2": "Yes. The whole platform is available in English and Spanish, and many courses include Spanish lessons or subtitles.",
+      "q3": "Do I get lifetime access?",
+      "a3": "Courses you purchase are yours forever, including future updates. Pro and Business plans give unlimited access while subscribed.",
+      "q4": "Is there a refund policy?",
+      "a4": "Yes. If a course isn't right for you, request a full refund within 30 days of purchase, no questions asked.",
+      "q5": "Can I teach on Learnora?",
+      "a5": "We're always looking for practitioners with something to share. Create an instructor account to build your first course with our course builder.",
+      "q6": "Do you offer team plans?",
+      "a6": "Our Business plan includes a team dashboard, assigned learning paths, SSO and centralized billing."
+    },
+    "ctaTitle": "Start learning today. Your first course is on us.",
+    "ctaBody": "Join over 250,000 professionals building real skills with Learnora.",
+    "ctaPrimary": "Create free account",
+    "ctaSecondary": "Explore courses"
+  },
+  "CourseCard": {
+    "by": "by {name}",
+    "students": "{count} students",
+    "level": "Level",
+    "duration": "Duration",
+    "spanish": "In Spanish",
+    "discount": "Save {percent}%",
+    "viewCourse": "View course"
+  }
+}
