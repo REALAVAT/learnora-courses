@@ -70,7 +70,9 @@ export function Curriculum({
                     return (
                       <li key={lesson.id} className="flex items-center gap-3 px-5 py-3 text-sm">
                         <Icon aria-hidden="true" className="size-4 shrink-0 text-muted-foreground" />
-                        <span className="sr-only">{lesson.type === "article" ? t("article") : t("video")}:</span>
+                        <span className="sr-only">
+                          {lesson.type === "article" ? t("article") : t("video")}:
+                        </span>
                         <span className="flex-1">{lesson.title[locale]}</span>
                         {lesson.preview && lesson.type === "video" ? (
                           <TrailerDialog

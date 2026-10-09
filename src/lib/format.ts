@@ -11,9 +11,10 @@ export function formatPrice(amount: number, locale: string, opts: { cents?: bool
 }
 
 export function formatNumber(value: number, locale: string, compact = false) {
-  return new Intl.NumberFormat(intlLocale(locale), compact ? { notation: "compact", maximumFractionDigits: 1 } : {}).format(
-    value,
-  );
+  return new Intl.NumberFormat(
+    intlLocale(locale),
+    compact ? { notation: "compact", maximumFractionDigits: 1 } : {},
+  ).format(value);
 }
 
 export function formatDuration(minutes: number) {

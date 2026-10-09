@@ -90,9 +90,15 @@ export const courses: Course[] = [
     bestseller: true,
     featured: true,
     outcomes: [
-      ["Build clean layouts with grids and a spacing scale", "Crear diseños limpios con retículas y escala de espaciado"],
+      [
+        "Build clean layouts with grids and a spacing scale",
+        "Crear diseños limpios con retículas y escala de espaciado",
+      ],
       ["Pair typefaces and set a readable type scale", "Combinar tipografías y definir una escala legible"],
-      ["Choose accessible color palettes that pass WCAG", "Elegir paletas de color accesibles que cumplan WCAG"],
+      [
+        "Choose accessible color palettes that pass WCAG",
+        "Elegir paletas de color accesibles que cumplan WCAG",
+      ],
       ["Present a portfolio-ready case study", "Presentar un caso de estudio listo para tu portafolio"],
     ],
     requirements: [
@@ -150,7 +156,10 @@ export const courses: Course[] = [
     outcomes: [
       ["Model color, type and spacing as variables", "Modelar color, tipografía y espaciado como variables"],
       ["Build flexible components with auto layout", "Crear componentes flexibles con auto layout"],
-      ["Support light and dark themes from one source", "Soportar temas claro y oscuro desde una sola fuente"],
+      [
+        "Support light and dark themes from one source",
+        "Soportar temas claro y oscuro desde una sola fuente",
+      ],
       ["Document and hand off to developers", "Documentar y entregar a desarrollo"],
     ],
     requirements: [

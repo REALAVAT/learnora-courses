@@ -112,7 +112,10 @@ export function SiteHeader() {
               <Link
                 href="/learn/wishlist"
                 aria-label={t("wishlistCount", { count: counts.wishlist })}
-                className={cn(buttonVariants({ variant: "ghost", size: "icon" }), "relative hidden sm:inline-flex")}
+                className={cn(
+                  buttonVariants({ variant: "ghost", size: "icon" }),
+                  "relative hidden sm:inline-flex",
+                )}
               >
                 <HeartIcon aria-hidden="true" />
                 <CountBadge count={counts.wishlist} />
@@ -150,7 +153,10 @@ export function SiteHeader() {
           )}
 
           <Sheet open={open} onOpenChange={setOpen}>
-            <SheetTrigger render={<Button variant="ghost" size="icon" className="lg:hidden" />} aria-label={t("openMenu")}>
+            <SheetTrigger
+              render={<Button variant="ghost" size="icon" className="lg:hidden" />}
+              aria-label={t("openMenu")}
+            >
               <MenuIcon aria-hidden="true" />
             </SheetTrigger>
             <SheetContent side="right" className="w-[86vw] max-w-sm p-0">
@@ -193,7 +199,11 @@ export function SiteHeader() {
                   </Link>
                 ) : (
                   <>
-                    <Link href="/signup" onClick={() => setOpen(false)} className={buttonVariants({ size: "xl" })}>
+                    <Link
+                      href="/signup"
+                      onClick={() => setOpen(false)}
+                      className={buttonVariants({ size: "xl" })}
+                    >
                       {t("signup")}
                     </Link>
                     <Link

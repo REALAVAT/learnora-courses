@@ -93,7 +93,9 @@ export const useLearning = create<LearningState>()(
       ...empty,
       enroll: (slug) =>
         set((s) =>
-          s.enrollments[slug] ? s : { enrollments: { ...s.enrollments, [slug]: { enrolledAt: new Date().toISOString() } } },
+          s.enrollments[slug]
+            ? s
+            : { enrollments: { ...s.enrollments, [slug]: { enrolledAt: new Date().toISOString() } } },
         ),
       isEnrolled: (slug) => Boolean(get().enrollments[slug]),
       setLesson: (slug, lessonId, done) =>
@@ -115,7 +117,9 @@ export const useLearning = create<LearningState>()(
           },
         })),
       addNote: (note) =>
-        set((s) => ({ notes: [{ ...note, id: uid("n_"), createdAt: new Date().toISOString() }, ...s.notes] })),
+        set((s) => ({
+          notes: [{ ...note, id: uid("n_"), createdAt: new Date().toISOString() }, ...s.notes],
+        })),
       deleteNote: (id) => set((s) => ({ notes: s.notes.filter((n) => n.id !== id) })),
       submitQuiz: (slug, answers) => {
         const course = getCourse(slug);
@@ -157,14 +161,26 @@ export const useLearning = create<LearningState>()(
         set({
           seeded: true,
           enrollments: {
-            "ui-design-foundations": { enrolledAt: daysAgo(48), lastLessonId: "m3-l3", lastVisitedAt: daysAgo(6) },
-            "modern-react-nextjs": { enrolledAt: daysAgo(21), lastLessonId: "m2-l2", lastVisitedAt: daysAgo(1) },
+            "ui-design-foundations": {
+              enrolledAt: daysAgo(48),
+              lastLessonId: "m3-l3",
+              lastVisitedAt: daysAgo(6),
+            },
+            "modern-react-nextjs": {
+              enrolledAt: daysAgo(21),
+              lastLessonId: "m2-l2",
+              lastVisitedAt: daysAgo(1),
+            },
             "photography-fundamentals": {
               enrolledAt: daysAgo(30),
               lastLessonId: "m3-l3",
               lastVisitedAt: daysAgo(2),
             },
-            "python-for-everyone": { enrolledAt: daysAgo(4), lastLessonId: "m1-l2", lastVisitedAt: daysAgo(3) },
+            "python-for-everyone": {
+              enrolledAt: daysAgo(4),
+              lastLessonId: "m1-l2",
+              lastVisitedAt: daysAgo(3),
+            },
           },
           completed: {
             "ui-design-foundations": lessonIds("ui-design-foundations"),
@@ -191,11 +207,14 @@ export const useLearning = create<LearningState>()(
             },
           ],
           quizResults: {
-            "ui-design-foundations": { score: 100, passed: true, takenAt: daysAgo(6), answers: [1, 1, 2, 1, 1] },
+            "ui-design-foundations": {
+              score: 100,
+              passed: true,
+              takenAt: daysAgo(6),
+              answers: [1, 1, 2, 1, 1],
+            },
           },
-          certificates: [
-            { id: "LRN-7Q2K9DX4", slug: "ui-design-foundations", name, issuedAt: daysAgo(6) },
-          ],
+          certificates: [{ id: "LRN-7Q2K9DX4", slug: "ui-design-foundations", name, issuedAt: daysAgo(6) }],
         });
       },
       reset: () => set({ ...empty }),

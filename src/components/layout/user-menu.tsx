@@ -25,7 +25,13 @@ import { initials } from "@/lib/format";
 import { useAuth, type DemoUser } from "@/lib/store/auth";
 import { startDemoSession } from "@/lib/store/demo";
 
-export function UserAvatar({ user, className }: { user: Pick<DemoUser, "name" | "avatar">; className?: string }) {
+export function UserAvatar({
+  user,
+  className,
+}: {
+  user: Pick<DemoUser, "name" | "avatar">;
+  className?: string;
+}) {
   return (
     <Avatar className={className}>
       <AvatarImage src={user.avatar} alt="" />

@@ -1,7 +1,14 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { LayoutGridIcon, ListIcon, SearchIcon, SearchXIcon, SlidersHorizontalIcon, XIcon } from "lucide-react";
+import {
+  LayoutGridIcon,
+  ListIcon,
+  SearchIcon,
+  SearchXIcon,
+  SlidersHorizontalIcon,
+  XIcon,
+} from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useEffect, useId, useMemo, useRef, useState } from "react";
@@ -10,7 +17,14 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
-import { Sheet, SheetContent, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import {
   activeFilterCount,
@@ -226,7 +240,11 @@ export function CatalogView({ courses }: { courses: CourseSummary[] }) {
           <div className="mb-5 flex items-center justify-between">
             <h2 className="text-base font-semibold">{t("filters")}</h2>
             {activeCount ? (
-              <button type="button" onClick={clearAll} className="text-sm font-medium text-primary hover:underline">
+              <button
+                type="button"
+                onClick={clearAll}
+                className="text-sm font-medium text-primary hover:underline"
+              >
                 {t("clearAll")}
               </button>
             ) : null}
@@ -290,7 +308,10 @@ export function CatalogView({ courses }: { courses: CourseSummary[] }) {
               value={filters.sort}
               onValueChange={(v) => update({ sort: (v ?? "popular") as SortOption })}
             >
-              <SelectTrigger aria-label={t("sort")} className="h-11! min-w-44 flex-1 rounded-xl bg-card px-3 sm:flex-none">
+              <SelectTrigger
+                aria-label={t("sort")}
+                className="h-11! min-w-44 flex-1 rounded-xl bg-card px-3 sm:flex-none"
+              >
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
@@ -336,7 +357,11 @@ export function CatalogView({ courses }: { courses: CourseSummary[] }) {
             </button>
           ))}
           {chips.length > 1 ? (
-            <button type="button" onClick={clearAll} className="text-xs font-medium text-primary hover:underline">
+            <button
+              type="button"
+              onClick={clearAll}
+              className="text-xs font-medium text-primary hover:underline"
+            >
               {t("clearAll")}
             </button>
           ) : null}

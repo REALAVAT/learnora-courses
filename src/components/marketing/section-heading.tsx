@@ -27,7 +27,9 @@ export function SectionHeading({
         <h2 id={id} className="text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
           {title}
         </h2>
-        {subtitle ? <p className="text-base text-pretty text-muted-foreground sm:text-lg">{subtitle}</p> : null}
+        {subtitle ? (
+          <p className="text-base text-pretty text-muted-foreground sm:text-lg">{subtitle}</p>
+        ) : null}
       </div>
       {action}
     </div>

@@ -20,7 +20,9 @@ export function generateStaticParams() {
   return routing.locales.flatMap((locale) => instructors.map((i) => ({ locale, slug: i.slug })));
 }
 
-export async function generateMetadata({ params }: PageProps<"/[locale]/instructors/[slug]">): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageProps<"/[locale]/instructors/[slug]">): Promise<Metadata> {
   const { locale, slug } = await params;
   const instructor = getInstructor(slug);
   if (!hasLocale(routing.locales, locale) || !instructor) return {};
@@ -134,7 +136,9 @@ export default async function InstructorPage({ params }: PageProps<"/[locale]/in
 
         <div className="flex min-w-0 flex-col gap-10">
           <header className="flex flex-col gap-3">
-            <p className="text-sm font-semibold tracking-wide text-primary uppercase">{instructor.role[locale]}</p>
+            <p className="text-sm font-semibold tracking-wide text-primary uppercase">
+              {instructor.role[locale]}
+            </p>
             <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">{instructor.name}</h1>
             <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted-foreground">
               <span className="inline-flex items-center gap-1.5">

@@ -36,19 +36,26 @@ export function CourseCard({
         list ? "flex-col sm:flex-row" : "flex-col",
       )}
     >
-      <div className={cn("relative shrink-0 overflow-hidden bg-muted", list ? "aspect-16/10 sm:aspect-auto sm:w-72" : "aspect-16/10")}>
+      <div
+        className={cn(
+          "relative shrink-0 overflow-hidden bg-muted",
+          list ? "aspect-16/10 sm:aspect-auto sm:w-72" : "aspect-16/10",
+        )}
+      >
         <Image
           src={course.image}
           alt=""
           fill
           priority={priority}
-          sizes={list ? "(min-width: 640px) 288px, 100vw" : "(min-width: 1280px) 300px, (min-width: 640px) 50vw, 100vw"}
+          sizes={
+            list
+              ? "(min-width: 640px) 288px, 100vw"
+              : "(min-width: 1280px) 300px, (min-width: 640px) 50vw, 100vw"
+          }
           className="object-cover transition-transform duration-500 group-hover:scale-[1.04] motion-reduce:group-hover:scale-100"
         />
         <div className="absolute top-3 left-3 flex gap-1.5">
-          {course.bestseller ? (
-            <Badge className="bg-star text-foreground">{t("bestseller")}</Badge>
-          ) : null}
+          {course.bestseller ? <Badge className="bg-star text-foreground">{t("bestseller")}</Badge> : null}
           {course.isNew ? <Badge className="bg-coral text-foreground">{t("new")}</Badge> : null}
           {course.language === "es" ? (
             <Badge variant="secondary" className="bg-card/90">
@@ -71,7 +78,9 @@ export function CourseCard({
             {title}
           </Link>
         </Heading>
-        {list ? <p className="line-clamp-2 text-sm text-muted-foreground">{course.subtitle[locale]}</p> : null}
+        {list ? (
+          <p className="line-clamp-2 text-sm text-muted-foreground">{course.subtitle[locale]}</p>
+        ) : null}
         <p className="text-sm text-muted-foreground">{tc("by", { name: course.instructor.name })}</p>
         <Rating rating={course.rating} count={course.ratingCount} />
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground">

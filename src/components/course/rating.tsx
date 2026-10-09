@@ -21,15 +21,7 @@ export function Stars({ rating, className }: { rating: number; className?: strin
   );
 }
 
-export function Rating({
-  rating,
-  count,
-  className,
-}: {
-  rating: number;
-  count?: number;
-  className?: string;
-}) {
+export function Rating({ rating, count, className }: { rating: number; count?: number; className?: string }) {
   const t = useTranslations("Common");
   const locale = useLocale();
   return (

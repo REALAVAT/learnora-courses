@@ -35,7 +35,14 @@ export function TrailerDialog({
             className,
           )}
         >
-          <Image src={poster} alt="" fill sizes="(min-width: 1024px) 380px, 100vw" className="object-cover" priority />
+          <Image
+            src={poster}
+            alt=""
+            fill
+            sizes="(min-width: 1024px) 380px, 100vw"
+            className="object-cover"
+            priority
+          />
           <span className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
           <span className="absolute top-1/2 left-1/2 grid size-16 -translate-x-1/2 -translate-y-1/2 place-items-center rounded-full bg-white text-primary shadow-xl transition-transform group-hover:scale-110 motion-reduce:group-hover:scale-100">
             <PlayIcon aria-hidden="true" className="ml-1 size-6 fill-current" />
@@ -56,7 +63,7 @@ export function TrailerDialog({
         </DialogTrigger>
       )}
       <DialogContent className="gap-0 overflow-hidden p-0 sm:max-w-3xl">
-        <DialogTitle className="px-5 pt-4 pb-3 pr-12 text-base">{t("trailerTitle", { title })}</DialogTitle>
+        <DialogTitle className="px-5 pt-4 pr-12 pb-3 text-base">{t("trailerTitle", { title })}</DialogTitle>
         <VideoPlayer poster={poster} title={title} durationSec={durationSec} label={title} autoPlay />
       </DialogContent>
     </Dialog>

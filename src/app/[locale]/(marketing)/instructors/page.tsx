@@ -13,7 +13,12 @@ export async function generateMetadata({ params }: PageProps<"/[locale]/instruct
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
   const t = await getTranslations({ locale, namespace: "Instructors" });
-  return pageMetadata({ locale, path: "/instructors", title: t("metaTitle"), description: t("metaDescription") });
+  return pageMetadata({
+    locale,
+    path: "/instructors",
+    title: t("metaTitle"),
+    description: t("metaDescription"),
+  });
 }
 
 export default async function InstructorsPage({ params }: PageProps<"/[locale]/instructors">) {

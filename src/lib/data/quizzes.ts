@@ -1,6 +1,11 @@
 import type { CategoryId, QuizQuestion } from "@/lib/types";
 
-type Q = [prompt: [string, string], options: [string, string][], answer: number, explanation: [string, string]];
+type Q = [
+  prompt: [string, string],
+  options: [string, string][],
+  answer: number,
+  explanation: [string, string],
+];
 
 function build(prefix: string, items: Q[]): QuizQuestion[] {
   return items.map(([prompt, options, answer, explanation], index) => ({
@@ -15,7 +20,10 @@ function build(prefix: string, items: Q[]): QuizQuestion[] {
 export const quizBanks: Record<CategoryId, QuizQuestion[]> = {
   design: build("design", [
     [
-      ["What is the main purpose of a visual hierarchy?", "¿Cuál es el propósito principal de la jerarquía visual?"],
+      [
+        "What is the main purpose of a visual hierarchy?",
+        "¿Cuál es el propósito principal de la jerarquía visual?",
+      ],
       [
         ["Make every element equally visible", "Hacer que todo sea igual de visible"],
         ["Guide attention in order of importance", "Guiar la atención por orden de importancia"],
@@ -57,13 +65,19 @@ export const quizBanks: Record<CategoryId, QuizQuestion[]> = {
         ["10:1", "10:1"],
       ],
       2,
-      ["Normal-size text needs at least 4.5:1 for AA.", "El texto de tamaño normal necesita al menos 4,5:1 para AA."],
+      [
+        "Normal-size text needs at least 4.5:1 for AA.",
+        "El texto de tamaño normal necesita al menos 4,5:1 para AA.",
+      ],
     ],
     [
       ["What is a design token?", "¿Qué es un design token?"],
       [
         ["A paid Figma plugin", "Un plugin de pago de Figma"],
-        ["A named, reusable design decision like a color or spacing value", "Una decisión de diseño con nombre y reutilizable, como un color o un espaciado"],
+        [
+          "A named, reusable design decision like a color or spacing value",
+          "Una decisión de diseño con nombre y reutilizable, como un color o un espaciado",
+        ],
         ["A login credential for designers", "Una credencial de acceso para diseñadores"],
         ["A type of user persona", "Un tipo de persona de usuario"],
       ],
@@ -90,7 +104,10 @@ export const quizBanks: Record<CategoryId, QuizQuestion[]> = {
   ]),
   development: build("dev", [
     [
-      ["In React, what triggers a component to re-render?", "En React, ¿qué provoca que un componente se vuelva a renderizar?"],
+      [
+        "In React, what triggers a component to re-render?",
+        "En React, ¿qué provoca que un componente se vuelva a renderizar?",
+      ],
       [
         ["A change in its state or props", "Un cambio en su estado o props"],
         ["Scrolling the page", "Desplazar la página"],
@@ -107,7 +124,10 @@ export const quizBanks: Record<CategoryId, QuizQuestion[]> = {
       ["What does TypeScript add to JavaScript?", "¿Qué añade TypeScript a JavaScript?"],
       [
         ["A new runtime", "Un nuevo entorno de ejecución"],
-        ["Static types checked before your code runs", "Tipos estáticos comprobados antes de ejecutar el código"],
+        [
+          "Static types checked before your code runs",
+          "Tipos estáticos comprobados antes de ejecutar el código",
+        ],
         ["Automatic database access", "Acceso automático a bases de datos"],
         ["Faster network requests", "Peticiones de red más rápidas"],
       ],
@@ -120,7 +140,10 @@ export const quizBanks: Record<CategoryId, QuizQuestion[]> = {
     [
       ["What is a React Server Component?", "¿Qué es un React Server Component?"],
       [
-        ["A component that renders on the server and sends no JavaScript for itself", "Un componente que se renderiza en el servidor y no envía su propio JavaScript"],
+        [
+          "A component that renders on the server and sends no JavaScript for itself",
+          "Un componente que se renderiza en el servidor y no envía su propio JavaScript",
+        ],
         ["A component that only works in Node scripts", "Un componente que solo funciona en scripts de Node"],
         ["A database model", "Un modelo de base de datos"],
         ["A CSS framework", "Un framework de CSS"],
@@ -132,7 +155,10 @@ export const quizBanks: Record<CategoryId, QuizQuestion[]> = {
       ],
     ],
     [
-      ["Which Python structure stores key and value pairs?", "¿Qué estructura de Python guarda pares clave y valor?"],
+      [
+        "Which Python structure stores key and value pairs?",
+        "¿Qué estructura de Python guarda pares clave y valor?",
+      ],
       [
         ["list", "list"],
         ["tuple", "tuple"],
@@ -173,7 +199,10 @@ export const quizBanks: Record<CategoryId, QuizQuestion[]> = {
       ["What does a LEFT JOIN return?", "¿Qué devuelve un LEFT JOIN?"],
       [
         ["Only matching rows", "Solo las filas coincidentes"],
-        ["All rows from the left table plus matches from the right", "Todas las filas de la tabla izquierda más las coincidencias de la derecha"],
+        [
+          "All rows from the left table plus matches from the right",
+          "Todas las filas de la tabla izquierda más las coincidencias de la derecha",
+        ],
         ["All rows from the right table only", "Solo las filas de la tabla derecha"],
         ["A random sample", "Una muestra aleatoria"],
       ],
@@ -198,10 +227,16 @@ export const quizBanks: Record<CategoryId, QuizQuestion[]> = {
       ],
     ],
     [
-      ["What makes a prompt for an AI model more reliable?", "¿Qué hace más fiable una instrucción para un modelo de IA?"],
+      [
+        "What makes a prompt for an AI model more reliable?",
+        "¿Qué hace más fiable una instrucción para un modelo de IA?",
+      ],
       [
         ["Being as short as possible", "Ser lo más corta posible"],
-        ["Clear context, a goal, constraints and an example", "Contexto claro, un objetivo, restricciones y un ejemplo"],
+        [
+          "Clear context, a goal, constraints and an example",
+          "Contexto claro, un objetivo, restricciones y un ejemplo",
+        ],
         ["Writing in all caps", "Escribir en mayúsculas"],
         ["Asking the same question ten times", "Hacer la misma pregunta diez veces"],
       ],
@@ -228,7 +263,10 @@ export const quizBanks: Record<CategoryId, QuizQuestion[]> = {
   ]),
   business: build("biz", [
     [
-      ["What is a product roadmap primarily for?", "¿Para qué sirve principalmente una hoja de ruta de producto?"],
+      [
+        "What is a product roadmap primarily for?",
+        "¿Para qué sirve principalmente una hoja de ruta de producto?",
+      ],
       [
         ["Promising exact ship dates", "Prometer fechas exactas de entrega"],
         ["Communicating priorities and direction", "Comunicar prioridades y dirección"],
@@ -256,7 +294,10 @@ export const quizBanks: Record<CategoryId, QuizQuestion[]> = {
       ],
     ],
     [
-      ["A healthy LTV to CAC ratio is often cited as about...", "Una relación LTV/CAC saludable suele citarse en torno a..."],
+      [
+        "A healthy LTV to CAC ratio is often cited as about...",
+        "Una relación LTV/CAC saludable suele citarse en torno a...",
+      ],
       [
         ["1:1", "1:1"],
         ["3:1", "3:1"],
@@ -272,7 +313,10 @@ export const quizBanks: Record<CategoryId, QuizQuestion[]> = {
     [
       ["What is runway?", "¿Qué es el runway?"],
       [
-        ["Months a company can operate before cash runs out", "Los meses que una empresa puede operar antes de quedarse sin caja"],
+        [
+          "Months a company can operate before cash runs out",
+          "Los meses que una empresa puede operar antes de quedarse sin caja",
+        ],
         ["The launch date of a product", "La fecha de lanzamiento de un producto"],
         ["A marketing channel", "Un canal de marketing"],
         ["The time to hire an employee", "El tiempo para contratar a alguien"],
@@ -281,10 +325,16 @@ export const quizBanks: Record<CategoryId, QuizQuestion[]> = {
       ["Runway equals cash divided by monthly burn.", "El runway es la caja dividida por el gasto mensual."],
     ],
     [
-      ["Which is the best first step for a growth experiment?", "¿Cuál es el mejor primer paso para un experimento de crecimiento?"],
+      [
+        "Which is the best first step for a growth experiment?",
+        "¿Cuál es el mejor primer paso para un experimento de crecimiento?",
+      ],
       [
         ["Increase the ad budget", "Aumentar el presupuesto de anuncios"],
-        ["Write a clear hypothesis and success metric", "Escribir una hipótesis clara y una métrica de éxito"],
+        [
+          "Write a clear hypothesis and success metric",
+          "Escribir una hipótesis clara y una métrica de éxito",
+        ],
         ["Redesign the logo", "Rediseñar el logotipo"],
         ["Copy a competitor", "Copiar a un competidor"],
       ],
@@ -297,7 +347,10 @@ export const quizBanks: Record<CategoryId, QuizQuestion[]> = {
   ]),
   languages: build("lang", [
     [
-      ["Which is the most formal way to address a client in Spanish?", "¿Cuál es la forma más formal de dirigirse a un cliente en español?"],
+      [
+        "Which is the most formal way to address a client in Spanish?",
+        "¿Cuál es la forma más formal de dirigirse a un cliente en español?",
+      ],
       [
         ["tú", "tú"],
         ["usted", "usted"],
@@ -308,7 +361,10 @@ export const quizBanks: Record<CategoryId, QuizQuestion[]> = {
       ["Usted is the formal singular 'you'.", "Usted es la forma formal en singular."],
     ],
     [
-      ["'I look forward to hearing from you' is best used...", "'I look forward to hearing from you' se usa mejor..."],
+      [
+        "'I look forward to hearing from you' is best used...",
+        "'I look forward to hearing from you' se usa mejor...",
+      ],
       [
         ["At the end of a professional email", "Al final de un correo profesional"],
         ["As a greeting", "Como saludo"],
@@ -316,10 +372,16 @@ export const quizBanks: Record<CategoryId, QuizQuestion[]> = {
         ["In a job title", "En un cargo"],
       ],
       0,
-      ["It is a polite closing line in business English.", "Es una frase de cierre cortés en inglés de negocios."],
+      [
+        "It is a polite closing line in business English.",
+        "Es una frase de cierre cortés en inglés de negocios.",
+      ],
     ],
     [
-      ["What helps most when presenting in a second language?", "¿Qué ayuda más al presentar en otro idioma?"],
+      [
+        "What helps most when presenting in a second language?",
+        "¿Qué ayuda más al presentar en otro idioma?",
+      ],
       [
         ["Memorizing every word", "Memorizar cada palabra"],
         ["Short sentences and clear signposting", "Frases cortas y transiciones claras"],
@@ -344,7 +406,10 @@ export const quizBanks: Record<CategoryId, QuizQuestion[]> = {
       ["Una reunión is a meeting.", "Una reunión es un meeting."],
     ],
     [
-      ["The fastest way to build speaking confidence is to...", "La forma más rápida de ganar confianza al hablar es..."],
+      [
+        "The fastest way to build speaking confidence is to...",
+        "La forma más rápida de ganar confianza al hablar es...",
+      ],
       [
         ["Wait until grammar is perfect", "Esperar a dominar la gramática"],
         ["Practice short, real conversations often", "Practicar a menudo conversaciones breves y reales"],
@@ -360,7 +425,10 @@ export const quizBanks: Record<CategoryId, QuizQuestion[]> = {
   ]),
   photography: build("photo", [
     [
-      ["Which three settings form the exposure triangle?", "¿Qué tres ajustes forman el triángulo de exposición?"],
+      [
+        "Which three settings form the exposure triangle?",
+        "¿Qué tres ajustes forman el triángulo de exposición?",
+      ],
       [
         ["Aperture, shutter speed, ISO", "Apertura, velocidad de obturación, ISO"],
         ["Zoom, focus, flash", "Zoom, enfoque, flash"],
@@ -391,7 +459,10 @@ export const quizBanks: Record<CategoryId, QuizQuestion[]> = {
       ["What is the 'golden hour'?", "¿Qué es la 'hora dorada'?"],
       [
         ["Midday sun", "El sol del mediodía"],
-        ["The soft light shortly after sunrise and before sunset", "La luz suave poco después del amanecer y antes del atardecer"],
+        [
+          "The soft light shortly after sunrise and before sunset",
+          "La luz suave poco después del amanecer y antes del atardecer",
+        ],
         ["Any time indoors", "Cualquier momento en interiores"],
         ["The hour after midnight", "La hora después de medianoche"],
       ],
@@ -413,10 +484,16 @@ export const quizBanks: Record<CategoryId, QuizQuestion[]> = {
       ],
     ],
     [
-      ["The rule of thirds suggests placing subjects...", "La regla de los tercios sugiere colocar el sujeto..."],
+      [
+        "The rule of thirds suggests placing subjects...",
+        "La regla de los tercios sugiere colocar el sujeto...",
+      ],
       [
         ["Always dead center", "Siempre en el centro"],
-        ["Along the lines or intersections of a 3x3 grid", "Sobre las líneas o intersecciones de una cuadrícula 3x3"],
+        [
+          "Along the lines or intersections of a 3x3 grid",
+          "Sobre las líneas o intersecciones de una cuadrícula 3x3",
+        ],
         ["At the very edge", "En el borde"],
         ["Out of frame", "Fuera del encuadre"],
       ],

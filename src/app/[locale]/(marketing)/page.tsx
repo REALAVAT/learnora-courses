@@ -52,7 +52,10 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
   const t = await getTranslations("Home");
   const tc = await getTranslations("Common");
 
-  const featured = courses.filter((c) => c.featured).slice(0, 4).map(toSummary);
+  const featured = courses
+    .filter((c) => c.featured)
+    .slice(0, 4)
+    .map(toSummary);
   const countByCategory = (id: string) => courses.filter((c) => c.category === id).length;
 
   const why = [
@@ -80,7 +83,10 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
 
       {/* Hero */}
       <section className="relative overflow-hidden">
-        <div aria-hidden="true" className="absolute inset-0 -z-10 bg-grid [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]" />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 -z-10 bg-grid [mask-image:radial-gradient(ellipse_at_top,black,transparent_70%)]"
+        />
         <div
           aria-hidden="true"
           className="absolute -top-40 right-[-10%] -z-10 size-[36rem] rounded-full bg-primary/15 blur-3xl"
@@ -112,7 +118,13 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
                   preserveAspectRatio="none"
                   className="absolute -bottom-1.5 left-0 h-3 w-full text-coral"
                 >
-                  <path d="M2 9c40-6 120-8 196-3" fill="none" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+                  <path
+                    d="M2 9c40-6 120-8 196-3"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                    strokeLinecap="round"
+                  />
                 </svg>
               </span>
               {titleAfter}
@@ -189,7 +201,11 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
 
       {/* Categories */}
       <section aria-labelledby="categories-title" className="container-page py-20 lg:py-24">
-        <SectionHeading id="categories-title" title={t("categoriesTitle")} subtitle={t("categoriesSubtitle")} />
+        <SectionHeading
+          id="categories-title"
+          title={t("categoriesTitle")}
+          subtitle={t("categoriesSubtitle")}
+        />
         <ul className="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
           {categories.map((cat, i) => (
             <li key={cat.id}>
@@ -226,7 +242,10 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
             title={t("featuredTitle")}
             subtitle={t("featuredSubtitle")}
             action={
-              <Link href="/courses" className={cn(buttonVariants({ variant: "outline", size: "xl" }), "self-start")}>
+              <Link
+                href="/courses"
+                className={cn(buttonVariants({ variant: "outline", size: "xl" }), "self-start")}
+              >
                 {t("browseAll")}
                 <ArrowRightIcon aria-hidden="true" />
               </Link>
@@ -268,7 +287,10 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
             title={t("instructorsTitle")}
             subtitle={t("instructorsSubtitle")}
             action={
-              <Link href="/instructors" className={cn(buttonVariants({ variant: "outline", size: "xl" }), "self-start")}>
+              <Link
+                href="/instructors"
+                className={cn(buttonVariants({ variant: "outline", size: "xl" }), "self-start")}
+              >
                 {t("meetAll")}
                 <ArrowRightIcon aria-hidden="true" />
               </Link>
@@ -297,9 +319,17 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
             <Reveal key={item.name} delay={i * 0.08}>
               <figure className="flex h-full flex-col rounded-2xl border bg-card p-7">
                 <QuoteIcon aria-hidden="true" className="size-7 text-coral" />
-                <blockquote className="mt-4 flex-1 text-base leading-relaxed text-pretty">“{item.quote[locale]}”</blockquote>
+                <blockquote className="mt-4 flex-1 text-base leading-relaxed text-pretty">
+                  “{item.quote[locale]}”
+                </blockquote>
                 <figcaption className="mt-6 flex items-center gap-3">
-                  <Image src={item.avatar} alt="" width={44} height={44} className="size-11 rounded-full object-cover" />
+                  <Image
+                    src={item.avatar}
+                    alt=""
+                    width={44}
+                    height={44}
+                    className="size-11 rounded-full object-cover"
+                  />
                   <div>
                     <p className="text-sm font-semibold">{item.name}</p>
                     <p className="text-sm text-muted-foreground">{item.role[locale]}</p>
@@ -319,7 +349,10 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
             title={t("pricingTitle")}
             subtitle={t("pricingSubtitle")}
             action={
-              <Link href="/pricing" className={cn(buttonVariants({ variant: "outline", size: "xl" }), "self-start")}>
+              <Link
+                href="/pricing"
+                className={cn(buttonVariants({ variant: "outline", size: "xl" }), "self-start")}
+              >
                 {t("comparePlans")}
                 <ArrowRightIcon aria-hidden="true" />
               </Link>
@@ -334,9 +367,13 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
                   plan.highlighted && "border-primary/40 ring-2 ring-primary/15",
                 )}
               >
-                <h3 className="text-lg font-semibold capitalize">{plan.id === "free" ? tc("free") : plan.id}</h3>
+                <h3 className="text-lg font-semibold capitalize">
+                  {plan.id === "free" ? tc("free") : plan.id}
+                </h3>
                 <p className="mt-3">
-                  <span className="text-4xl font-semibold tracking-tight">{formatPrice(plan.monthly, locale)}</span>
+                  <span className="text-4xl font-semibold tracking-tight">
+                    {formatPrice(plan.monthly, locale)}
+                  </span>
                   <span className="text-muted-foreground">{t("perMonth")}</span>
                 </p>
                 <ul className="mt-5 flex flex-col gap-2.5">
@@ -354,7 +391,10 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
       </section>
 
       {/* FAQ */}
-      <section aria-labelledby="faq-title" className="container-page grid gap-10 py-20 lg:grid-cols-[1fr_1.6fr] lg:py-24">
+      <section
+        aria-labelledby="faq-title"
+        className="container-page grid gap-10 py-20 lg:grid-cols-[1fr_1.6fr] lg:py-24"
+      >
         <SectionHeading id="faq-title" title={t("faqTitle")} />
         <Accordion className="rounded-2xl border bg-card px-5">
           {faqKeys.map((k) => (
@@ -372,14 +412,25 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
       <section className="container-page pb-20 lg:pb-24">
         <Reveal>
           <div className="relative overflow-hidden rounded-[2rem] bg-primary px-6 py-14 text-center text-primary-foreground sm:px-12 lg:py-20">
-            <div aria-hidden="true" className="absolute -top-24 -right-24 size-80 rounded-full bg-coral/40 blur-3xl" />
-            <div aria-hidden="true" className="absolute -bottom-32 -left-20 size-80 rounded-full bg-white/10 blur-3xl" />
+            <div
+              aria-hidden="true"
+              className="absolute -top-24 -right-24 size-80 rounded-full bg-coral/40 blur-3xl"
+            />
+            <div
+              aria-hidden="true"
+              className="absolute -bottom-32 -left-20 size-80 rounded-full bg-white/10 blur-3xl"
+            />
             <h2 className="relative mx-auto max-w-2xl text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
               {t("ctaTitle")}
             </h2>
-            <p className="relative mx-auto mt-4 max-w-xl text-lg text-primary-foreground/85">{t("ctaBody")}</p>
+            <p className="relative mx-auto mt-4 max-w-xl text-lg text-primary-foreground/85">
+              {t("ctaBody")}
+            </p>
             <div className="relative mt-8 flex flex-wrap justify-center gap-3">
-              <Link href="/signup" className={cn(buttonVariants({ size: "xl" }), "bg-white text-primary hover:bg-white/90")}>
+              <Link
+                href="/signup"
+                className={cn(buttonVariants({ size: "xl" }), "bg-white text-primary hover:bg-white/90")}
+              >
                 {t("ctaPrimary")}
               </Link>
               <Link

@@ -126,14 +126,23 @@ export default async function CoursePage({ params }: PageProps<"/[locale]/course
         items={[
           { name: tcat("breadcrumbHome"), url: localizedUrl(locale) },
           { name: t("breadcrumbCourses"), url: localizedUrl(locale, "/courses") },
-          { name: tc(`category.${course.category}`), url: localizedUrl(locale, `/courses?category=${course.category}`) },
+          {
+            name: tc(`category.${course.category}`),
+            url: localizedUrl(locale, `/courses?category=${course.category}`),
+          },
           { name: title, url },
         ]}
       />
 
       <section className="relative overflow-hidden bg-[oklch(0.22_0.07_282)] text-white">
-        <div aria-hidden="true" className="absolute -top-32 right-0 size-96 rounded-full bg-primary/50 blur-3xl" />
-        <div aria-hidden="true" className="absolute -bottom-40 left-1/3 size-80 rounded-full bg-coral/20 blur-3xl" />
+        <div
+          aria-hidden="true"
+          className="absolute -top-32 right-0 size-96 rounded-full bg-primary/50 blur-3xl"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute -bottom-40 left-1/3 size-80 rounded-full bg-coral/20 blur-3xl"
+        />
         <div className="relative container-page grid gap-8 py-10 lg:grid-cols-[1fr_380px] lg:gap-12 lg:py-14">
           <div className="flex flex-col gap-4 [&_nav_*]:text-white/75 [&_nav_[aria-current]]:text-white">
             <Breadcrumbs
@@ -144,15 +153,19 @@ export default async function CoursePage({ params }: PageProps<"/[locale]/course
               ]}
             />
             <div className="flex flex-wrap gap-2">
-              {course.bestseller ? <Badge className="bg-star text-foreground">{tc("bestseller")}</Badge> : null}
+              {course.bestseller ? (
+                <Badge className="bg-star text-foreground">{tc("bestseller")}</Badge>
+              ) : null}
               {course.isNew ? <Badge className="bg-coral text-foreground">{tc("new")}</Badge> : null}
               <Badge variant="outline" className="border-white/25 text-white">
                 {tc(`level.${course.level}`)}
               </Badge>
             </div>
-            <h1 className="text-3xl font-semibold tracking-tight text-balance sm:text-4xl lg:text-5xl">{title}</h1>
+            <h1 className="text-3xl font-semibold tracking-tight text-balance sm:text-4xl lg:text-5xl">
+              {title}
+            </h1>
             <p className="max-w-2xl text-lg text-white/85">{course.subtitle[locale]}</p>
-            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-white/85 [&_.text-muted-foreground]:text-white/70 [&_.text-foreground]:text-white">
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-white/85 [&_.text-foreground]:text-white [&_.text-muted-foreground]:text-white/70">
               <Rating rating={course.rating} count={course.ratingCount} />
               <span className="inline-flex items-center gap-1.5">
                 <UsersIcon aria-hidden="true" className="size-4" />
@@ -229,7 +242,11 @@ export default async function CoursePage({ params }: PageProps<"/[locale]/course
             <h2 id="curriculum-title" className="mb-2 text-2xl font-semibold tracking-tight">
               {t("curriculumTitle")}
             </h2>
-            <Curriculum modules={course.modules} poster={course.image} quizQuestions={course.quiz.questions.length} />
+            <Curriculum
+              modules={course.modules}
+              poster={course.image}
+              quizQuestions={course.quiz.questions.length}
+            />
           </section>
 
           <section aria-labelledby="requirements-title">
@@ -290,7 +307,9 @@ export default async function CoursePage({ params }: PageProps<"/[locale]/course
             </h2>
             <div className="mt-5 grid gap-6 rounded-2xl border bg-card p-6 sm:grid-cols-[180px_1fr]">
               <div className="flex flex-col items-center justify-center gap-1 text-center">
-                <p className="text-5xl font-semibold tracking-tight text-primary">{course.rating.toFixed(1)}</p>
+                <p className="text-5xl font-semibold tracking-tight text-primary">
+                  {course.rating.toFixed(1)}
+                </p>
                 <Stars rating={course.rating} />
                 <p className="mt-1 text-sm text-muted-foreground">{t("ratingOutOf")}</p>
               </div>

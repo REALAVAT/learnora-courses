@@ -88,7 +88,9 @@ export const useTeach = create<TeachState>()(
         return course;
       },
       updateCourse: (id, patch) =>
-        set((s) => ({ courses: s.courses.map((c) => (c.id === id ? { ...c, ...patch, updatedAt: now() } : c)) })),
+        set((s) => ({
+          courses: s.courses.map((c) => (c.id === id ? { ...c, ...patch, updatedAt: now() } : c)),
+        })),
       deleteCourse: (id) =>
         set((s) => ({
           courses: s.courses.filter((c) => c.id !== id),
@@ -143,8 +145,18 @@ export const useTeach = create<TeachState>()(
               id: "m_motion_1",
               title: locale === "es" ? "Principios del movimiento" : "Principles of motion",
               lessons: [
-                { id: "l_motion_1", title: locale === "es" ? "Por qué importa el movimiento" : "Why motion matters", duration: 8, type: "video" },
-                { id: "l_motion_2", title: locale === "es" ? "Curvas de aceleración" : "Easing curves", duration: 12, type: "video" },
+                {
+                  id: "l_motion_1",
+                  title: locale === "es" ? "Por qué importa el movimiento" : "Why motion matters",
+                  duration: 8,
+                  type: "video",
+                },
+                {
+                  id: "l_motion_2",
+                  title: locale === "es" ? "Curvas de aceleración" : "Easing curves",
+                  duration: 12,
+                  type: "video",
+                },
               ],
             },
           ],

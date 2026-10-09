@@ -85,7 +85,9 @@ export const useCommerce = create<CommerceState>()(
         if (get().seeded) return;
         set((s) => ({
           seeded: true,
-          wishlist: Array.from(new Set([...s.wishlist, "figma-design-systems", "startup-finance-and-fundraising"])),
+          wishlist: Array.from(
+            new Set([...s.wishlist, "figma-design-systems", "startup-finance-and-fundraising"]),
+          ),
           cart: Array.from(new Set([...s.cart, "data-analysis-with-sql"])),
           orders: [
             {
