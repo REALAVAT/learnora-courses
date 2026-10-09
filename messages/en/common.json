@@ -87,6 +87,8 @@
     "delete": "Delete",
     "edit": "Edit",
     "close": "Close",
+    "notifications": "Notifications",
+    "dismissNotification": "Dismiss notification",
     "continue": "Continue",
     "level": {
       "beginner": "Beginner",
