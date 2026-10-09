@@ -21,7 +21,7 @@ type PageMetadataInput = {
   description: string;
   image?: string;
   noindex?: boolean;
-  type?: "website" | "article";
+  type?: "website" | "article" | "profile";
 };
 
 export function pageMetadata({

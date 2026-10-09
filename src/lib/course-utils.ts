@@ -53,9 +53,9 @@ export function lessonNeighbors(course: Course, lessonId: string) {
 }
 
 export function findLesson(course: Course, lessonId: string) {
-  for (const module of course.modules) {
-    const lesson = module.lessons.find((l) => l.id === lessonId);
-    if (lesson) return { module, lesson };
+  for (const mod of course.modules) {
+    const lesson = mod.lessons.find((l) => l.id === lessonId);
+    if (lesson) return { module: mod, lesson };
   }
   return undefined;
 }

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { geistSans } from "@/lib/fonts";
 import "./globals.css";
 
@@ -8,9 +9,9 @@ export default function GlobalNotFound() {
         <div className="text-center">
           <p className="font-mono text-sm text-muted-foreground">404</p>
           <h1 className="mt-2 text-3xl font-semibold tracking-tight">Page not found</h1>
-          <a href="/en" className="mt-6 inline-block font-medium text-primary underline-offset-4 hover:underline">
+          <Link href="/en" className="mt-6 inline-block font-medium text-primary underline-offset-4 hover:underline">
             Back to Learnora
-          </a>
+          </Link>
         </div>
       </body>
     </html>
