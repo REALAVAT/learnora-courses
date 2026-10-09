@@ -56,9 +56,7 @@ export function CertificateView({ id }: { id: string }) {
       <main id="main" className="container-page py-8 sm:py-12 print:p-0">
         {certificate && course ? (
           <>
-            <h1 className="sr-only">
-              {t("heading")}: {course.title[locale]}
-            </h1>
+            <h1 className="sr-only">{`${t("heading")}: ${course.title[locale]}`}</h1>
             <div className="mx-auto max-w-5xl print:max-w-none">
               <CertificateArtwork certificate={certificate} course={course} locale={locale} />
             </div>

@@ -51,6 +51,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
   setRequestLocale(locale);
   const t = await getTranslations("Home");
   const tc = await getTranslations("Common");
+  const tp = await getTranslations("Pricing");
 
   const featured = courses
     .filter((c) => c.featured)
@@ -146,7 +147,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
             </dl>
           </div>
 
-          <Reveal className="relative mx-auto w-full max-w-xl lg:max-w-none" y={28}>
+          <div className="relative mx-auto w-full max-w-xl lg:max-w-none">
             <div className="relative aspect-[4/4.2] overflow-hidden rounded-[2rem] border bg-muted shadow-2xl shadow-primary/15 sm:aspect-[5/4.4]">
               <Image
                 src={images.hero}
@@ -182,7 +183,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
                 </p>
               </div>
             </div>
-          </Reveal>
+          </div>
         </div>
 
         <div className="border-y bg-card/60">
@@ -367,9 +368,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
                   plan.highlighted && "border-primary/40 ring-2 ring-primary/15",
                 )}
               >
-                <h3 className="text-lg font-semibold capitalize">
-                  {plan.id === "free" ? tc("free") : plan.id}
-                </h3>
+                <h3 className="text-lg font-semibold">{tp(`plan.${plan.id}`)}</h3>
                 <p className="mt-3">
                   <span className="text-4xl font-semibold tracking-tight">
                     {formatPrice(plan.monthly, locale)}
