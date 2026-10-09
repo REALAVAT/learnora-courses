@@ -38,6 +38,8 @@ export type Announcement = {
 
 type TeachState = {
   seeded: boolean;
+  seedLocale: Locale | null;
+  pristine: boolean;
   courses: DraftCourse[];
   announcements: Announcement[];
   createCourse: (title: string) => DraftCourse;
@@ -59,6 +61,8 @@ export const useTeach = create<TeachState>()(
   persist(
     (set, get) => ({
       seeded: false,
+      seedLocale: null,
+      pristine: true,
       courses: [],
       announcements: [],
       createCourse: (title) => {
@@ -84,23 +88,30 @@ export const useTeach = create<TeachState>()(
           rating: 0,
           updatedAt: now(),
         };
-        set((s) => ({ courses: [course, ...s.courses] }));
+        set((s) => ({ pristine: false, courses: [course, ...s.courses] }));
         return course;
       },
       updateCourse: (id, patch) =>
         set((s) => ({
+          pristine: false,
           courses: s.courses.map((c) => (c.id === id ? { ...c, ...patch, updatedAt: now() } : c)),
         })),
       deleteCourse: (id) =>
         set((s) => ({
+          pristine: false,
           courses: s.courses.filter((c) => c.id !== id),
           announcements: s.announcements.filter((a) => a.courseId !== id),
         })),
       addAnnouncement: (a) =>
-        set((s) => ({ announcements: [{ ...a, id: uid("a_"), createdAt: now() }, ...s.announcements] })),
-      deleteAnnouncement: (id) => set((s) => ({ announcements: s.announcements.filter((a) => a.id !== id) })),
+        set((s) => ({
+          pristine: false,
+          announcements: [{ ...a, id: uid("a_"), createdAt: now() }, ...s.announcements],
+        })),
+      deleteAnnouncement: (id) =>
+        set((s) => ({ pristine: false, announcements: s.announcements.filter((a) => a.id !== id) })),
       seedDemo: (instructorSlug, locale) => {
-        if (get().seeded) return;
+        const { seeded, pristine, seedLocale } = get();
+        if (seeded && (!pristine || seedLocale === locale)) return;
         const published: DraftCourse[] = getCoursesByInstructor(instructorSlug).map((c, i) => ({
           id: `c_${c.slug}`,
           sourceSlug: c.slug,
@@ -167,6 +178,8 @@ export const useTeach = create<TeachState>()(
         };
         set({
           seeded: true,
+          seedLocale: locale,
+          pristine: true,
           courses: [draft, ...published],
           announcements: [
             {
@@ -182,7 +195,7 @@ export const useTeach = create<TeachState>()(
           ],
         });
       },
-      reset: () => set({ seeded: false, courses: [], announcements: [] }),
+      reset: () => set({ seeded: false, seedLocale: null, pristine: true, courses: [], announcements: [] }),
     }),
     { name: "learnora-teach", version: 1, storage: createJSONStorage(() => localStorage) },
   ),
