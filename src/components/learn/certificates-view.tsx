@@ -46,10 +46,10 @@ export function CertificatesView() {
                   </div>
                   <Link
                     href={`/learn/certificates/${certificate.id}`}
+                    aria-label={`${t("view")}: ${course.title[locale]}`}
                     className={buttonVariants({ variant: "outline", size: "sm" })}
                   >
                     {t("view")}
-                    <span className="sr-only">: {course.title[locale]}</span>
                   </Link>
                 </div>
               </li>

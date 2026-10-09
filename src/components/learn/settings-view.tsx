@@ -156,7 +156,7 @@ function PreferenceRow({
   );
 }
 
-export function SettingsView() {
+export function SettingsView({ instructor = false }: { instructor?: boolean }) {
   const t = useTranslations("Settings");
   const tp = useTranslations("Pricing");
   const tc = useTranslations("Common");
@@ -222,12 +222,14 @@ export function SettingsView() {
             </div>
           </div>
           <div className="divide-y border-t">
-            <PreferenceRow
-              label={t("autoplay")}
-              body={t("autoplayBody")}
-              checked={prefs.autoplay}
-              onChange={(autoplay) => prefs.set({ autoplay })}
-            />
+            {instructor ? null : (
+              <PreferenceRow
+                label={t("autoplay")}
+                body={t("autoplayBody")}
+                checked={prefs.autoplay}
+                onChange={(autoplay) => prefs.set({ autoplay })}
+              />
+            )}
             <PreferenceRow
               label={t("emailDigest")}
               body={t("emailDigestBody")}
@@ -237,40 +239,42 @@ export function SettingsView() {
           </div>
         </Panel>
 
-        <Panel id="settings-subscription" title={t("subscription")}>
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex items-center gap-3">
-              <span className="grid size-10 place-items-center rounded-xl bg-indigo-soft text-primary">
-                <SparklesIcon aria-hidden="true" className="size-5" />
-              </span>
-              <div>
-                <p className="text-sm font-medium">
-                  {paid ? t("currentPlan", { plan: tp(`plan.${paid.plan}`) }) : t("freePlan")}
-                </p>
-                {paid ? (
-                  <p className="text-xs text-muted-foreground">
-                    {tp(paid.cycle)} · {formatDate(paid.since, locale)}
+        {instructor ? null : (
+          <Panel id="settings-subscription" title={t("subscription")}>
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex items-center gap-3">
+                <span className="grid size-10 place-items-center rounded-xl bg-indigo-soft text-primary">
+                  <SparklesIcon aria-hidden="true" className="size-5" />
+                </span>
+                <div>
+                  <p className="text-sm font-medium">
+                    {paid ? t("currentPlan", { plan: tp(`plan.${paid.plan}`) }) : t("freePlan")}
                   </p>
-                ) : null}
+                  {paid ? (
+                    <p className="text-xs text-muted-foreground">
+                      {tp(paid.cycle)} · {formatDate(paid.since, locale)}
+                    </p>
+                  ) : null}
+                </div>
               </div>
+              {paid ? (
+                <Button
+                  variant="outline"
+                  onClick={() => {
+                    setSubscription(null);
+                    toast.success(t("planCanceled"));
+                  }}
+                >
+                  {t("cancelPlan")}
+                </Button>
+              ) : (
+                <Link href="/pricing" className={buttonVariants()}>
+                  {t("upgrade")}
+                </Link>
+              )}
             </div>
-            {paid ? (
-              <Button
-                variant="outline"
-                onClick={() => {
-                  setSubscription(null);
-                  toast.success(t("planCanceled"));
-                }}
-              >
-                {t("cancelPlan")}
-              </Button>
-            ) : (
-              <Link href="/pricing" className={buttonVariants()}>
-                {t("upgrade")}
-              </Link>
-            )}
-          </div>
-        </Panel>
+          </Panel>
+        )}
 
         <Panel id="settings-demo" title={t("demoData")} body={t("demoDataBody")}>
           <Dialog open={confirmOpen} onOpenChange={setConfirmOpen}>

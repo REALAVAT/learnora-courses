@@ -3,7 +3,21 @@ import { hasLocale } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 
-type Namespace = "Learn" | "Quiz" | "Certificate" | "Wishlist" | "Cart" | "Checkout" | "Orders" | "Settings";
+type Namespace =
+  | "Learn"
+  | "Quiz"
+  | "Certificate"
+  | "Wishlist"
+  | "Cart"
+  | "Checkout"
+  | "Orders"
+  | "Settings"
+  | "Teach"
+  | "TeachCourses"
+  | "Builder"
+  | "TeachStudents"
+  | "TeachAnnouncements"
+  | "TeachAnalytics";
 
 export async function appMetadata(
   params: Promise<{ locale: string }>,
