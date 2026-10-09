@@ -1,0 +1,45 @@
+Cada pocos meses alguien me pregunta si todavía vale la pena aprender SQL ahora que los asistentes de IA pueden escribir consultas. Mi respuesta no ha cambiado: sí, y quizá más que nunca.
+
+## La IA escribe consultas. La pregunta sigue siendo tuya.
+
+Un asistente puede convertir "muéstrame los ingresos por región" en una consulta en segundos. Pero ¿qué ingresos? ¿Brutos o netos? ¿Con devoluciones? ¿Qué zona horaria define "el mes pasado"? Esas decisiones cambian la respuesta, y solo alguien que entiende los datos puede tomarlas.
+
+## SQL es cómo compruebas la respuesta
+
+La habilidad de datos más valiosa no es escribir una consulta desde cero. Es leerla y detectar qué falla: un join que duplica filas, un filtro que descarta nulos sin avisar, una media que debería haber sido una mediana.
+
+```sql
+SELECT region, SUM(amount) AS revenue
+FROM orders
+WHERE status = 'paid'
+  AND created_at >= DATE '2026-09-01'
+GROUP BY region
+ORDER BY revenue DESC;
+```
+
+Si puedes leer eso y preguntar enseguida "¿y los pedidos devueltos?", ya eres más útil que la herramienta.
+
+<Callout title="Una regla práctica">
+  Antes de fiarte de cualquier número, haz una consulta de control: cuenta las filas, revisa el rango de
+  fechas y compara el total con una cifra que ya conozcas.
+</Callout>
+
+## Sirve en todas partes
+
+SQL existe desde hace cincuenta años y funciona por debajo de casi todas las herramientas de analítica de producto, paneles de BI y almacenes de datos. Apréndelo una vez y te servirá en todos tus trabajos.
+
+## Empieza con cinco ideas
+
+Puedes hacer una cantidad sorprendente de análisis real con solo:
+
+- `SELECT` y `WHERE` para filtrar
+- `GROUP BY` con `COUNT`, `SUM` y `AVG` para resumir
+- `JOIN` para combinar tablas
+- `ORDER BY` y `LIMIT` para ordenar
+- Expresiones de tabla comunes (`WITH`) para mantener todo legible
+
+> Las herramientas cambian cada año. La capacidad de hacer una pregunta precisa a tus datos no pasa de moda.
+
+---
+
+Nuestro curso Análisis de datos con SQL empieza desde cero y termina con un análisis de negocio real que podrás presentar.

@@ -1,0 +1,45 @@
+Every few months someone asks me whether SQL is still worth learning now that AI assistants can write queries. My answer hasn't changed: yes, and maybe more than ever.
+
+## AI writes queries. You still own the question.
+
+An assistant can turn "show me revenue by region" into a query in seconds. But which revenue? Gross or net? Including refunds? Which time zone defines "last month"? Those choices change the answer, and only someone who understands the data can make them.
+
+## SQL is how you check the answer
+
+The most valuable data skill isn't writing a query from scratch. It's reading one and spotting what's wrong: a join that duplicates rows, a filter that silently drops nulls, an average that should have been a median.
+
+```sql
+SELECT region, SUM(amount) AS revenue
+FROM orders
+WHERE status = 'paid'
+  AND created_at >= DATE '2026-09-01'
+GROUP BY region
+ORDER BY revenue DESC;
+```
+
+If you can read that and immediately ask "what about refunded orders?", you're already more useful than the tool.
+
+<Callout title="A quick rule of thumb">
+  Before trusting any number, run a sanity query: count the rows, check the date range and compare the total
+  against a figure you already know.
+</Callout>
+
+## It transfers everywhere
+
+SQL has been around for fifty years and runs underneath almost every product analytics tool, BI dashboard and data warehouse. Learn it once and it pays off in every job you'll have.
+
+## Start with five ideas
+
+You can do a surprising amount of real analysis with just:
+
+- `SELECT` and `WHERE` to filter
+- `GROUP BY` with `COUNT`, `SUM` and `AVG` to summarize
+- `JOIN` to combine tables
+- `ORDER BY` and `LIMIT` to rank
+- Common table expressions (`WITH`) to keep things readable
+
+> Tools change every year. The ability to ask a precise question of your data doesn't go out of date.
+
+---
+
+Our Data Analysis with SQL course starts from zero and ends with a real business analysis you can present.
