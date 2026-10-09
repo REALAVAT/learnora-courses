@@ -64,7 +64,7 @@ export function DemoLoginButtons() {
             key={role}
             type="button"
             onClick={() => finish(role)}
-            className="group flex items-start gap-3 rounded-2xl border bg-card p-4 text-left transition-[border-color,box-shadow,transform] outline-none hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md focus-visible:ring-3 focus-visible:ring-ring/50 motion-reduce:hover:translate-y-0"
+            className="group flex items-start gap-3 rounded-2xl border bg-card p-4 text-left transition-[border-color,box-shadow,translate] duration-200 ease-out outline-none hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md focus-visible:ring-3 focus-visible:ring-ring/50 motion-reduce:hover:translate-y-0"
           >
             <span
               className={cn(

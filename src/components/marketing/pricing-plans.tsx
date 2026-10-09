@@ -81,7 +81,7 @@ export function PricingPlans() {
               key={plan.id}
               aria-labelledby={`plan-${plan.id}`}
               className={cn(
-                "relative flex flex-col rounded-3xl border bg-card p-7 transition-shadow hover:shadow-lg",
+                "relative flex flex-col rounded-3xl border bg-card p-7 transition-shadow duration-300 ease-out hover:shadow-lg",
                 plan.highlighted &&
                   "border-primary/50 shadow-xl ring-2 shadow-primary/10 ring-primary/20 lg:-my-3 lg:py-10",
               )}

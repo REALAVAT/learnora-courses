@@ -34,7 +34,7 @@ export function CertificatesView() {
             return (
               <li
                 key={certificate.id}
-                className="rounded-3xl border bg-card p-4 transition-shadow hover:shadow-lg"
+                className="rounded-3xl border bg-card p-4 transition-shadow duration-300 ease-out hover:shadow-lg"
               >
                 <div aria-hidden="true" className="pointer-events-none select-none">
                   <CertificateArtwork certificate={certificate} course={course} locale={locale} />

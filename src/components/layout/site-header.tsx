@@ -172,7 +172,7 @@ export function SiteHeader() {
                     href={item.href}
                     onClick={() => setOpen(false)}
                     aria-current={isActive(item.href) ? "page" : undefined}
-                    className="rounded-lg px-3 py-3 text-base font-medium hover:bg-secondary aria-[current=page]:bg-secondary"
+                    className="rounded-lg px-3 py-3 text-base font-medium transition-colors hover:bg-secondary aria-[current=page]:bg-secondary"
                   >
                     {t(item.key)}
                   </Link>
@@ -181,7 +181,7 @@ export function SiteHeader() {
                   <Link
                     href="/learn/wishlist"
                     onClick={() => setOpen(false)}
-                    className="rounded-lg px-3 py-3 text-base font-medium hover:bg-secondary"
+                    className="rounded-lg px-3 py-3 text-base font-medium transition-colors hover:bg-secondary"
                   >
                     {t("wishlist")}
                   </Link>

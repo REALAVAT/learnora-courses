@@ -342,7 +342,7 @@ export function LessonView({ slug, lessonId }: { slug: string; lessonId: string 
                           type="button"
                           onClick={() => seek(note.seconds)}
                           aria-label={t("jumpTo", { time: formatTimestamp(note.seconds) })}
-                          className="rounded-md bg-indigo-soft px-2 py-1 font-mono text-xs font-semibold text-primary hover:bg-primary hover:text-primary-foreground"
+                          className="rounded-md bg-indigo-soft px-2 py-1 font-mono text-xs font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
                         >
                           {formatTimestamp(note.seconds)}
                         </button>

@@ -239,7 +239,7 @@ export function VideoPlayer({
                 type="button"
                 onClick={() => (playing ? setPlaying(false) : play())}
                 aria-label={playing ? t("pause") : t("play")}
-                className="grid size-9 place-items-center rounded-md hover:bg-white/15"
+                className="grid size-9 place-items-center rounded-md transition-colors hover:bg-white/15"
               >
                 {playing ? (
                   <PauseIcon aria-hidden="true" className="size-5 fill-current" />
@@ -251,7 +251,7 @@ export function VideoPlayer({
                 type="button"
                 onClick={() => setMuted((m) => !m)}
                 aria-label={muted ? t("unmute") : t("mute")}
-                className="grid size-9 place-items-center rounded-md hover:bg-white/15"
+                className="grid size-9 place-items-center rounded-md transition-colors hover:bg-white/15"
               >
                 {muted ? (
                   <VolumeXIcon aria-hidden="true" className="size-5" />
@@ -270,7 +270,7 @@ export function VideoPlayer({
                   type="button"
                   onClick={() => setSpeed((s) => speeds[(speeds.indexOf(s) + 1) % speeds.length])}
                   aria-label={`${t("speed")}: ${speed}x`}
-                  className="h-9 min-w-11 rounded-md px-2 font-mono text-xs font-semibold hover:bg-white/15"
+                  className="h-9 min-w-11 rounded-md px-2 font-mono text-xs font-semibold transition-colors hover:bg-white/15"
                 >
                   {speed}x
                 </button>
@@ -279,7 +279,7 @@ export function VideoPlayer({
                   onClick={() => setCaptions((c) => !c)}
                   aria-label={captions ? t("captionsOff") : t("captionsOn")}
                   aria-pressed={captions}
-                  className="grid size-9 place-items-center rounded-md hover:bg-white/15"
+                  className="grid size-9 place-items-center rounded-md transition-colors hover:bg-white/15"
                 >
                   {captions ? (
                     <CaptionsIcon aria-hidden="true" className="size-5" />
@@ -291,7 +291,7 @@ export function VideoPlayer({
                   type="button"
                   onClick={toggleFullscreen}
                   aria-label={fullscreen ? t("exitFullscreen") : t("fullscreen")}
-                  className="grid size-9 place-items-center rounded-md hover:bg-white/15"
+                  className="grid size-9 place-items-center rounded-md transition-colors hover:bg-white/15"
                 >
                   {fullscreen ? (
                     <MinimizeIcon aria-hidden="true" className="size-5" />

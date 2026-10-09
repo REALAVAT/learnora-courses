@@ -213,14 +213,14 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
               <Reveal delay={i * 0.05}>
                 <Link
                   href={`/courses?category=${cat.id}`}
-                  className="group relative flex aspect-[4/5] flex-col justify-end overflow-hidden rounded-2xl bg-muted p-4 text-white outline-none focus-visible:ring-3 focus-visible:ring-ring/60"
+                  className="group relative isolate flex aspect-[4/5] flex-col justify-end overflow-hidden rounded-2xl bg-muted p-4 text-white outline-none focus-visible:ring-3 focus-visible:ring-ring/60"
                 >
                   <Image
                     src={cat.image}
                     alt=""
                     fill
                     sizes="(min-width: 1024px) 200px, (min-width: 768px) 33vw, 50vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105 motion-reduce:group-hover:scale-100"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105 motion-reduce:group-hover:scale-100"
                   />
                   <span className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
                   <span className="relative text-base font-semibold">{tc(`category.${cat.id}`)}</span>

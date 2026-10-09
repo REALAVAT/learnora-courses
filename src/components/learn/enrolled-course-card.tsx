@@ -45,14 +45,14 @@ export function EnrolledCourseCard({ item }: { item: EnrolledCourse }) {
   const Icon = action.icon;
 
   return (
-    <article className="group relative flex flex-col overflow-hidden rounded-2xl border bg-card transition-shadow hover:shadow-lg">
+    <article className="group relative isolate flex flex-col overflow-hidden rounded-2xl border bg-card transition-shadow duration-300 ease-out hover:shadow-lg">
       <div className="relative aspect-[16/9] overflow-hidden bg-muted">
         <Image
           src={course.image}
           alt=""
           fill
           sizes="(min-width: 1280px) 320px, (min-width: 640px) 50vw, 100vw"
-          className="object-cover transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:group-hover:scale-100"
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03] motion-reduce:group-hover:scale-100"
         />
         {item.certificateId ? (
           <span className="absolute top-3 left-3 inline-flex items-center gap-1 rounded-full bg-success px-2.5 py-1 text-xs font-semibold text-white">
@@ -64,7 +64,7 @@ export function EnrolledCourseCard({ item }: { item: EnrolledCourse }) {
       <div className="flex flex-1 flex-col gap-3 p-5">
         <div>
           <h3 className="leading-snug font-semibold">
-            <Link href={`/courses/${course.slug}`} className="hover:text-primary">
+            <Link href={`/courses/${course.slug}`} className="transition-colors hover:text-primary">
               {course.title[locale]}
             </Link>
           </h3>
