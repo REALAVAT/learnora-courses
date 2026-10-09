@@ -1,8 +1,10 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
+import type { Locale } from "@/i18n/routing";
 
-export default async function MarketingLayout({ children }: LayoutProps<"/[locale]">) {
+export default async function MarketingLayout({ children, params }: LayoutProps<"/[locale]">) {
+  setRequestLocale((await params).locale as Locale);
   const t = await getTranslations("Nav");
   return (
     <>

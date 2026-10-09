@@ -1,11 +1,13 @@
 import Image from "next/image";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Logo } from "@/components/brand/logo";
 import { LanguageSwitcher } from "@/components/layout/language-switcher";
 import { Link } from "@/i18n/navigation";
+import type { Locale } from "@/i18n/routing";
 import { unsplash } from "@/lib/images";
 
-export default async function AuthLayout({ children }: LayoutProps<"/[locale]">) {
+export default async function AuthLayout({ children, params }: LayoutProps<"/[locale]">) {
+  setRequestLocale((await params).locale as Locale);
   const t = await getTranslations("Auth");
   const tn = await getTranslations("Nav");
   return (

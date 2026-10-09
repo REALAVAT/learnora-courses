@@ -1,7 +1,9 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { RoleGuard } from "@/components/app/role-guard";
+import type { Locale } from "@/i18n/routing";
 
-export default async function PlayerLayout({ children }: LayoutProps<"/[locale]/learn">) {
+export default async function PlayerLayout({ children, params }: LayoutProps<"/[locale]/learn">) {
+  setRequestLocale((await params).locale as Locale);
   const t = await getTranslations("Nav");
   return (
     <>

@@ -2,7 +2,13 @@
   "Metadata": {
     "title": "Learnora | Cursos online para profesionales modernos",
     "titleTemplate": "%s | Learnora",
-    "description": "Aprende diseño, programación, negocios, idiomas y fotografía con profesionales en activo. Cursos en video basados en proyectos, cuestionarios y certificados, desde Nueva York para el mundo."
+    "description": "Aprende diseño, programación, negocios, idiomas y fotografía con profesionales en activo. Cursos en video basados en proyectos, cuestionarios y certificados, desde Nueva York para el mundo.",
+    "ogEyebrow": "Cursos online · Nueva York",
+    "ogTitle": "Aprende de profesionales en activo, a tu ritmo.",
+    "ogSubtitle": "Cursos en video basados en proyectos, cuestionarios y certificados.",
+    "ogCourses": "{count} cursos",
+    "ogInstructors": "{count} instructores",
+    "ogBlogEyebrow": "Blog · {minutes} min de lectura"
   },
   "Nav": {
     "skip": "Saltar al contenido",

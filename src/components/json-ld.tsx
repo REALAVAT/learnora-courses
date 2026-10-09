@@ -22,7 +22,7 @@ export function OrganizationJsonLd({ locale }: { locale: Locale }) {
         name: siteConfig.name,
         legalName: siteConfig.legalName,
         url: localizedUrl(locale),
-        logo: `${url}/icon.svg`,
+        logo: `${url}/apple-icon`,
         email: siteConfig.email,
         address: {
           "@type": "PostalAddress",

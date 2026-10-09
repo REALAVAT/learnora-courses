@@ -1,10 +1,12 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { LearnNav } from "@/components/app/learn-nav";
 import { RoleGuard } from "@/components/app/role-guard";
 import { AppFooter } from "@/components/layout/app-footer";
 import { SiteHeader } from "@/components/layout/site-header";
+import type { Locale } from "@/i18n/routing";
 
-export default async function LearnAppLayout({ children }: LayoutProps<"/[locale]/learn">) {
+export default async function LearnAppLayout({ children, params }: LayoutProps<"/[locale]/learn">) {
+  setRequestLocale((await params).locale as Locale);
   const t = await getTranslations("Nav");
   return (
     <>

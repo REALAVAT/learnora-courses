@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { RoleGuard } from "@/components/app/role-guard";
 import { TeachNav } from "@/components/app/teach-nav";
 import { AppFooter } from "@/components/layout/app-footer";
 import { SiteHeader } from "@/components/layout/site-header";
+import type { Locale } from "@/i18n/routing";
 
 export const metadata: Metadata = { robots: { index: false, follow: false } };
 
-export default async function TeachLayout({ children }: LayoutProps<"/[locale]/teach">) {
+export default async function TeachLayout({ children, params }: LayoutProps<"/[locale]/teach">) {
+  setRequestLocale((await params).locale as Locale);
   const t = await getTranslations("Nav");
   return (
     <>

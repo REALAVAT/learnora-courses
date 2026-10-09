@@ -2,7 +2,13 @@
   "Metadata": {
     "title": "Learnora | Online courses for modern professionals",
     "titleTemplate": "%s | Learnora",
-    "description": "Learn design, coding, business, languages and photography from working professionals. Project-based video courses, quizzes and certificates, from New York to the world."
+    "description": "Learn design, coding, business, languages and photography from working professionals. Project-based video courses, quizzes and certificates, from New York to the world.",
+    "ogEyebrow": "Online courses · New York",
+    "ogTitle": "Learn from working professionals, at your own pace.",
+    "ogSubtitle": "Project-based video courses, quizzes and certificates.",
+    "ogCourses": "{count} courses",
+    "ogInstructors": "{count} instructors",
+    "ogBlogEyebrow": "Blog · {minutes} min read"
   },
   "Nav": {
     "skip": "Skip to content",
