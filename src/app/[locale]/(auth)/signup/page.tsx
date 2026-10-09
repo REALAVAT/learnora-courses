@@ -1,7 +1,6 @@
 import { hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { Suspense } from "react";
 import { AuthCard } from "@/components/auth/auth-card";
 import { routing } from "@/i18n/routing";
 import { pageMetadata } from "@/lib/seo";

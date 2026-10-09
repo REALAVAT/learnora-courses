@@ -144,6 +144,10 @@
   body {
     background: white;
   }
+  .print-exact {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
   @page {
     size: landscape;
     margin: 0;
